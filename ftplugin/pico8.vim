@@ -22,4 +22,16 @@ call map(s:undo_ftplugin, "'execute ' . string(v:val)")
 let b:undo_ftplugin = join(s:undo_ftplugin, ' | ')
 unlet s:undo_ftplugin
 
+
+" The following lines enable the macros/matchit.vim plugin for
+" extended matching with the % key.
+if exists("loaded_matchit")
+  let b:match_ignorecase = 0
+  let b:match_words =
+    \ '\<\%(do\|function\|if\)\>:' .
+    \ '\<\%(return\|else\|elseif\)\>:' .
+    \ '\<end\>,' .
+    \ '\<repeat\>:\<until\>'
+endif
+
 " vim: ts=2 sw=2 et
