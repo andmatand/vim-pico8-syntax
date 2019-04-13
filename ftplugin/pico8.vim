@@ -15,7 +15,8 @@ setlocal fo-=t fo+=c fo+=r fo+=o fo+=q fo+=l
 setlocal cms=--%s com=s:--[[,m:\ ,e:]],:--
 call add(s:undo_ftplugin, 'setlocal fo< cms< com<')
 
-setlocal sw=1 sts=1 et
+" Use two-space tabs
+setlocal ts=2 sw=2 sts=2
 
 " Let Vim know how to disable the plug-in.
 call map(s:undo_ftplugin, "'execute ' . string(v:val)")
