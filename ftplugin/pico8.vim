@@ -18,6 +18,9 @@ call add(s:undo_ftplugin, 'setlocal fo< cms< com<')
 " Use two-space tabs
 setlocal ts=2 sw=2 sts=2
 
+" Display glyphs better
+set ambiwidth=double
+
 " Let Vim know how to disable the plug-in.
 call map(s:undo_ftplugin, "'execute ' . string(v:val)")
 let b:undo_ftplugin = join(s:undo_ftplugin, ' | ')
