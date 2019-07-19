@@ -114,24 +114,17 @@ endif
 " tables
 syn region  luaTableBlock transparent matchgroup=luaTable start="{" end="}" contains=ALLBUT,luaTodo,luaSpecial,luaCond,luaCondElseif,luaCondEnd,luaCondStart,luaBlock,luaRepeatBlock,luaRepeat,luaStatement
 
-syn keyword luaFunc clip pget pset sget
-syn keyword luaFunc sset fget fset print
-syn keyword luaFunc cursor color cls camera
-syn keyword luaFunc circ circfill line rect
-syn keyword luaFunc rectfill pal palt spr
-syn keyword luaFunc sspr add del foreach
-syn keyword luaFunc btn btnp sfx music
-syn keyword luaFunc mget mset map peek
-syn keyword luaFunc poke memcpy reload cstore
-syn keyword luaFunc memset max min mid
-syn keyword luaFunc flr cos sin atan2
-syn keyword luaFunc sqrt abs rnd srand
-syn keyword luaFunc band bor bxor bnot
-syn keyword luaFunc shl shr sub all pairs
-syn keyword luaFunc assert type setmetatable
-syn keyword luaFunc cocreate coresume costatus yield
-syn keyword luaFunc sgn stat cartdata dget dset
-
+" PICO-8 API functions
+syn keyword luaFunc abs add all assert atan2 band bnot bor btn btnp bxor
+syn keyword luaFunc camera cartdata ceil circ circfill clip cls cocreate color
+syn keyword luaFunc coresume cos costatus cstore cursor del dget dir dset
+syn keyword luaFunc extcmd fget fillp flip flr foreach fset getmetatable line
+syn keyword luaFunc load lshr map max memcpy memset menuitem mget mid min mset
+syn keyword luaFunc music pairs pal palt peek peek2 peek4 pget poke poke2
+syn keyword luaFunc poke4 print printh pset rawequal rawget rawlen rawset rect
+syn keyword luaFunc rectfill reload rnd rotl rotr run serial setmetatable sfx
+syn keyword luaFunc sget sgn shl shr sin spr sqrt srand sset sspr stat stop
+syn keyword luaFunc sub time tonum tostr type yield
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
