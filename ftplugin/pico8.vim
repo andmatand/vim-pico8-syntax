@@ -15,9 +15,6 @@ setlocal fo-=t fo+=c fo+=r fo+=o fo+=q fo+=l
 setlocal cms=--%s com=s:--[[,m:\ ,e:]],:--
 call add(s:undo_ftplugin, 'setlocal fo< cms< com<')
 
-" Use two-space tabs
-setlocal noexpandtab ts=2 sw=2 sts=2
-
 " Display glyphs better
 set ambiwidth=double
 
