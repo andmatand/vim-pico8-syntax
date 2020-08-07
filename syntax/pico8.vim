@@ -115,16 +115,17 @@ endif
 syn region  luaTableBlock transparent matchgroup=luaTable start="{" end="}" contains=ALLBUT,luaTodo,luaSpecial,luaCond,luaCondElseif,luaCondEnd,luaCondStart,luaBlock,luaRepeatBlock,luaRepeat,luaStatement
 
 " PICO-8 API functions
-syn keyword luaFunc abs add all assert atan2 band bnot bor btn btnp bxor
-syn keyword luaFunc camera cartdata ceil circ circfill clip cls cocreate color
-syn keyword luaFunc coresume cos costatus cstore cursor del dget dir dset
-syn keyword luaFunc extcmd fget fillp flip flr foreach fset getmetatable line
-syn keyword luaFunc load lshr map max memcpy memset menuitem mget mid min mset
-syn keyword luaFunc music pairs pal palt peek peek2 peek4 pget poke poke2
-syn keyword luaFunc poke4 print printh pset rawequal rawget rawlen rawset rect
-syn keyword luaFunc rectfill reload rnd rotl rotr run serial setmetatable sfx
-syn keyword luaFunc sget sgn shl shr sin spr sqrt srand sset sspr stat stop
-syn keyword luaFunc sub time tonum tostr type yield
+syn keyword luafunc abs add all assert atan2 band bnot bor btn btnp bxor
+syn keyword luafunc camera cartdata ceil chr circ circfill clip cls cocreate
+syn keyword luafunc color coresume cos costatus cstore cursor del deli dget
+syn keyword luafunc dir dset extcmd fget fillp flip flr foreach fset
+syn keyword luafunc getmetatable line load lshr map max memcpy memset menuitem
+syn keyword luafunc mget mid min mset music ord oval ovalfill pack pairs pal
+syn keyword luafunc palt peek peek2 peek4 pget poke poke2 poke4 print printh
+syn keyword luafunc pset rawequal rawget rawlen rawset rect rectfill reload
+syn keyword luafunc rnd rotl rotr run serial setmetatable sfx sget sgn shl shr
+syn keyword luafunc sin split spr sqrt srand sset sspr stat stop sub time
+syn keyword luafunc tline tonum tostr type unpack yield
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
