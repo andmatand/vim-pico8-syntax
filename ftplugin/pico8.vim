@@ -16,7 +16,7 @@ setlocal cms=--%s com=s:--[[,m:\ ,e:]],:--
 call add(s:undo_ftplugin, 'setlocal fo< cms< com<')
 
 " Display glyphs better
-set ambiwidth=double
+setlocal ambiwidth=double
 
 " Let Vim know how to disable the plug-in.
 call map(s:undo_ftplugin, "'execute ' . string(v:val)")
