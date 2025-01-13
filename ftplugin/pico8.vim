@@ -1,38 +1,42 @@
-" Vim file type plug-in
-" Language: Pico-8
+" Copied from vim's default ftplugin/lua.vim and then modified a bit
 
-if exists('b:did_ftplugin')
+if exists("b:did_ftplugin")
   finish
-else
-  let b:did_ftplugin = 1
 endif
+let b:did_ftplugin = 1
 
-" A list of commands that undo buffer local changes made below.
-let s:undo_ftplugin = []
+let s:cpo_save = &cpo
+set cpo&vim
 
-" Set comment (formatting) related options. {{{1
-setlocal fo-=t fo+=c fo+=r fo+=o fo+=q fo+=l
-setlocal cms=--%s com=s:--[[,m:\ ,e:]],:--
-call add(s:undo_ftplugin, 'setlocal fo< cms< com<')
+setlocal comments=:--
+setlocal commentstring=--\ %s
+setlocal formatoptions-=t formatoptions+=croql
 
-" Display glyphs better
+" Display P8SCII glyphs better
 setlocal ambiwidth=double
 
-" Let Vim know how to disable the plug-in.
-call map(s:undo_ftplugin, "'execute ' . string(v:val)")
-let b:undo_ftplugin = join(s:undo_ftplugin, ' | ')
-unlet s:undo_ftplugin
+let &l:define = '\<function\|\<local\%(\s\+function\)\='
 
+let b:undo_ftplugin = "setlocal cms< com< def< fo< inex< sua<"
 
-" The following lines enable the macros/matchit.vim plugin for
-" extended matching with the % key.
-if exists("loaded_matchit")
+if exists("loaded_matchit") && !exists("b:match_words")
   let b:match_ignorecase = 0
   let b:match_words =
-    \ '\<\%(do\|function\|if\)\>:' .
-    \ '\<\%(return\|else\|elseif\)\>:' .
-    \ '\<end\>,' .
-    \ '\<repeat\>:\<until\>'
+	\ '\<\%(do\|function\|if\)\>:' ..
+	\ '\<\%(return\|else\|elseif\)\>:' ..
+	\ '\<end\>,' ..
+	\ '\<repeat\>:\<until\>,' ..
+	\ '\%(--\)\=\[\(=*\)\[:]\1]'
+  let b:undo_ftplugin ..= " | unlet! b:match_words b:match_ignorecase"
 endif
 
-" vim: ts=2 sw=2 et
+if (has("gui_win32") || has("gui_gtk")) && !exists("b:browsefilter")
+  let b:browsefilter = "Lua Source Files (*.lua)\t*.lua\n" ..
+	\	       "All Files (*.*)\t*.*\n"
+  let b:undo_ftplugin ..= " | unlet! b:browsefilter"
+endif
+
+let &cpo = s:cpo_save
+unlet s:cpo_save
+
+" vim: nowrap sw=2 sts=2 ts=8 noet:
