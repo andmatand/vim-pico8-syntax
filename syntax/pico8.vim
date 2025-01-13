@@ -155,6 +155,9 @@ if lua_version >= 5
   endif
 endif
 
+" PICO-8 binary numbers
+syn match luaNumber "\<0[b]\x\+\>"
+
 " tables
 syn region luaTableBlock transparent matchgroup=luaTable start="{" end="}" contains=TOP,luaStatement
 
