@@ -242,6 +242,8 @@ syn keyword p8api abs
                 \ rect
                 \ rectfill
                 \ reload
+                \ rrect
+                \ rrectfill
                 \ rnd
                 \ rotl
                 \ rotr
